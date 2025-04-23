@@ -5,7 +5,13 @@ return {
     opts = {
       servers = {
         biome = {
-          -- Não precisa configurar nada extra aqui se quiser o padrão
+          settings = {
+            biome = {
+              -- Habilita a correção automática de erros
+              -- (além de formatar)
+              autoFix = true,
+            },
+          },
         },
       },
     },

@@ -3,6 +3,9 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+
+require 'custom.keymaps.shortcuts'
+
 return {
   {
     'folke/noice.nvim',
@@ -21,7 +24,7 @@ return {
         options = {
           theme = 'catppuccin',
           section_separators = '',
-          component_separators = '',
+          component_separators = '|',
           icons_enabled = true,
         },
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -37,36 +40,6 @@ return {
     end,
   },
 
-  {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
-    config = function()
-      local catppuccin = require 'catppuccin'
-
-      catppuccin.setup {
-        flavour = 'mocha',
-        transparent_background = false,
-        term_colors = true,
-        integrations = {
-          cmp = true,
-          gitsigns = true,
-          nvimtree = true,
-          telescope = true,
-          treesitter = true,
-        },
-      }
-    end,
-  },
-
-  {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    -- version = "nightly",
-  },
-
   -- Add indentation guides even on blank lines
   {
     'lukas-reineke/indent-blankline.nvim',
@@ -76,13 +49,6 @@ return {
       scope = { enabled = false },
     },
     -- cond = false,
-  },
-
-  {
-    'windwp/nvim-ts-autotag',
-    ft = { 'html' },
-    lazy = true,
-    config = true,
   },
 
   {

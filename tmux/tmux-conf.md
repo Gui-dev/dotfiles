@@ -1,9 +1,16 @@
-
 set -g default-terminal "screen-256color"
 set -ga terminal-overrides ',*:Tc' # this is for 256 color
 set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q' # this is for the cursor shape
 
 set-option -sa terminal-features ',xterm-256color:RGB'
+
+set -g status on
+set -g status-interval 1
+set -g status-justify centre
+set -g status-left-length 60
+set -g status-right-length 120
+set -g status-left ''
+set -g status-right '#[fg=yellow]#H #[fg=cyan]%Y-%m-%d %H:%M'
 
 set -g prefix C-a
 unbind C-b
@@ -57,5 +64,4 @@ set -g @continuum-restore 'on' # enable tmux-continuum functionality
 run '~/.tmux/plugins/tpm/tpm'
 
 bind-key -n C-l if-shell "$is_vim" "send-keys C-l"  "send-keys C-l"
-
 

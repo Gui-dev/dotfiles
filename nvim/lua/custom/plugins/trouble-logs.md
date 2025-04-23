@@ -1,0 +1,50 @@
+
+return {
+  'folke/trouble.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  opts = {
+    use_diagnostic_signs = false, -- usamos ícones personalizados abaixo
+    signs = {
+      error = '',
+      warning = '',
+      hint = '',
+      information = '',
+      other = '',
+    },
+    icons = {
+      error = '',
+      warning = '',
+      hint = '',
+      information = '',
+      other = '',
+    },
+    fold_open = '',
+    fold_closed = '',
+    indent_lines = true,
+    padding = true,
+    action_keys = {
+      close = 'q',
+      refresh = 'r',
+      jump = { '<cr>', '<tab>' },
+      open_split = { '<c-x>' },
+      open_vsplit = { '<c-v>' },
+      open_tab = { '<c-t>' },
+      toggle_mode = 'm',
+      toggle_preview = 'P',
+      hover = 'K',
+      preview = 'p',
+      close_folds = { 'zM', 'zm' },
+      open_folds = { 'zR', 'zr' },
+      toggle_fold = 'zA',
+      previous = 'k',
+      next = 'j',
+    },
+  },
+  keys = {
+    { '<leader>xx', '<cmd>Trouble diagnostics<cr>', desc = 'Diagnostics (Arquivo)' },
+    { '<leader>xw', '<cmd>Trouble workspace_diagnostics<cr>', desc = 'Diagnostics (Projeto)' },
+    { '<leader>xr', '<cmd>Trouble lsp_references<cr>', desc = 'Referências LSP' },
+    { '<leader>xq', '<cmd>Trouble quickfix<cr>', desc = 'Quickfix List' },
+    { '<leader>xt', '<cmd>TroubleToggle<cr>', desc = 'Toggle Trouble' },
+  },
+}
