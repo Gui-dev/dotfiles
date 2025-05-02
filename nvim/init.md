@@ -805,7 +805,10 @@ require('lazy').setup({
           {
             'rafamadriz/friendly-snippets',
             config = function()
-              require('luasnip.loaders.from_vscode').lazy_load '~/.config/nvim/lua/snippets/'
+              require('luasnip.loaders.from_vscode').lazy_load() -- carrega os snippets prontos
+              require('luasnip.loaders.from_lua').load {
+                paths = vim.fn.stdpath 'config' .. '/lua/snippets/',
+              }
             end,
           },
         },
@@ -987,9 +990,6 @@ require('lazy').setup({
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
-      autotag = {
-        enable = true,
-      },
       highlight = {
         enable = true,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
@@ -1054,6 +1054,8 @@ require('lazy').setup({
     },
   },
 })
+
+pcall(require, 'custom')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
