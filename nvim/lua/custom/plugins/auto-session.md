@@ -1,4 +1,3 @@
-
 return {
   {
     'rmagatti/auto-session',
@@ -8,8 +7,9 @@ return {
     ---@module "auto-session"
     ---@type AutoSession.Config
     opts = {
-      suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/', 'Documents' },
+      suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
       -- log_level = 'debug',
     },
   },
 }
+

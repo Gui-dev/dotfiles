@@ -9,6 +9,7 @@ return {
       require('catppuccin').setup {
         flavour = 'mocha', -- ou 'latte', 'frappe', 'macchiato'
         integrations = {
+          ufo = true,
           treesitter = true,
           cmp = true,
           gitsigns = true,

@@ -4,9 +4,23 @@
 --
 -- See the kickstart.nvim README for more information
 
-require 'custom.keymaps.shortcuts'
-
 return {
+  require 'custom.plugins.auto-session',
+  require 'custom.plugins.autopairs-ts',
+  require 'custom.plugins.code-companion',
+  require 'custom.plugins.codeium',
+  require 'custom.plugins.color-scheme',
+  require 'custom.plugins.lazygit',
+  require 'custom.plugins.lualine',
+  require 'custom.plugins.mini',
+  require 'custom.plugins.neoscroll',
+  require 'custom.plugins.neotest',
+  require 'custom.plugins.smear-cursor',
+  require 'custom.plugins.tabs',
+  require 'custom.plugins.tpipeline',
+  require 'custom.plugins.trouble-logs',
+  require 'custom.plugins.ufo',
+
   {
     'folke/noice.nvim',
     event = 'VeryLazy',
@@ -15,29 +29,6 @@ return {
       'MunifTanjim/nui.nvim',
       'rcarriga/nvim-notify',
     },
-  },
-
-  {
-    'nvim-lualine/lualine.nvim',
-    config = function()
-      require('lualine').setup {
-        options = {
-          theme = 'catppuccin',
-          section_separators = '',
-          component_separators = '|',
-          icons_enabled = true,
-        },
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        sections = {
-          lualine_a = { 'mode' },
-          lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = { 'filename' },
-          lualine_x = { 'filetype' },
-          lualine_y = { 'progress' },
-          lualine_z = { 'location' },
-        },
-      }
-    end,
   },
 
   -- Add indentation guides even on blank lines
@@ -51,16 +42,18 @@ return {
     -- cond = false,
   },
 
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-  },
-
   -- highlight css colors
   {
     'brenoprata10/nvim-highlight-colors',
     ft = { 'css' },
     config = true,
     lazy = true,
+  },
+
+  {
+    'max397574/better-escape.nvim',
+    config = function()
+      require('better_escape').setup()
+    end,
   },
 }

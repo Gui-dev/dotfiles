@@ -1,4 +1,3 @@
-
 return {
   'folke/trouble.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -48,3 +47,4 @@ return {
     { '<leader>xt', '<cmd>TroubleToggle<cr>', desc = 'Toggle Trouble' },
   },
 }
+

@@ -4,7 +4,7 @@
 
 return {
   'nvim-neo-tree/neo-tree.nvim',
-  version = '*',
+  version = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
@@ -50,6 +50,7 @@ return {
       },
 
       filesystem = {
+        use_libuv_file_watcher = true, -- 💡 evita duplicação de buffer
         window = {
           mappings = {
             ['\\'] = 'close_window',
@@ -63,7 +64,7 @@ return {
         follow_current_file = {
           enabled = true,
         },
-        group_empty_dirs = true,
+        group_empty_dirs = false,
         hijack_netrw_behavior = 'open_default',
       },
 

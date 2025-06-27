@@ -1,4 +1,3 @@
-
 return {
   'Exafunction/windsurf.vim',
   event = 'BufEnter',
@@ -18,3 +17,4 @@ return {
     end, { expr = true, silent = true })
   end,
 }
+

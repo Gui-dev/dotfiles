@@ -1,4 +1,3 @@
-
 -- Desativa diagnostics em arquivos Markdown usando o método recomendado
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'markdown',
@@ -7,3 +6,4 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.diagnostic.disable(bufnr)
   end,
 })
+

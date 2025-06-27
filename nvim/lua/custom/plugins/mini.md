@@ -1,4 +1,3 @@
-
 return {
   'echasnovski/mini.move',
   version = '*',
@@ -20,3 +19,4 @@ return {
     }
   end,
 }
+
